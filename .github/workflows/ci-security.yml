@@ -37,10 +37,10 @@ jobs:
           npm audit --json > audit.json || true
       - name: Upload audit result
         uses: actions/upload-artifact@v4
-          with:
-            name: npm-audit
-            path: audit.json
-            retention-days: 50
+        with:
+          name: npm-audit
+          path: audit.json
+          retention-days: 50
 
   secret-scan:
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
           detect-secrets scan --all-files > .secrets.baseline || true
       - name: Upload secrets scan
         uses: actions/upload-artifact@v4
-          with:
-            name: secrets-scan
-            path: .secrets.baseline
-            retention-days: 50
+        with:
+          name: secrets-scan
+          path: .secrets.baseline
+          retention-days: 50
