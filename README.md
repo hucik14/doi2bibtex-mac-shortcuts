@@ -1,3 +1,5 @@
+[![CI and Security](https://github.com/hucik14/doi2bibtex-mac-shortcuts/actions/workflows/ci-security.yml/badge.svg)](https://github.com/hucik14/doi2bibtex-mac-shortcuts/actions/workflows/ci-security.yml)
+
 # DOI to BibTeX - macOS Shortcuts
 
 Convert DOI links to formatted BibTeX citations locally on your Mac using Apple Shortcuts.
