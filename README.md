@@ -11,16 +11,12 @@ Convert DOI links to formatted BibTeX citations locally on your Mac using Apple 
 
 ## Download & Install
 
-1. **Download the shortcut:**
+**Download the shortcut:**
    - Download the shortcut from icloud: [https://www.icloud.com/shortcuts/6db292124c034975a465749ce20e5440](https://www.icloud.com/shortcuts/6db292124c034975a465749ce20e5440)
-
-   
-2. **Install:**
-   - Double-click the downloaded `.shortcut` file
    - Click "Add Shortcut" when prompted
    - Grant permissions if asked (Javascript permission needed)
 
-3. **Ready to use!**
+**Ready to use!**
    - Find it in your Shortcuts app
    - Invoke via Spotlight, Siri, or add it to the menu bar
 
@@ -63,4 +59,4 @@ http://dx.doi.org/10.1109/ACCESS.2025.3646349
 
 ## Acknowledgments
 
-- Inspired by the amazing [doi2bib.org](https://www.doi2bib.org/) which can be used by other users without Mac
+- Inspired by the amazing [doi2bib.org](https://www.doi2bib.org/) which works on any device in a web browser.
