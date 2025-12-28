@@ -1,0 +1,27 @@
+{
+  "name": "doi2bib-shortcuts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hucik14/doi2bibtex-mac-shortcuts.git"
+  },
+  "keywords": [],
+  "author": "hucik14",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/hucik14/doi2bibtex-mac-shortcuts/issues"
+  },
+  "homepage": "https://github.com/hucik14/doi2bibtex-mac-shortcuts",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "node-fetch": "^2.7.0"
+  }
+}

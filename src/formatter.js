@@ -33,11 +33,14 @@ function formatBibTeX(bibtex) {
     const title = titleMatch[1];
     // Get first 7 characters from title, remove special characters and spaces
     const cleanTitle = title.replace(/[^a-zA-Z0-9]/g, '');
-    titlePrefix = cleanTitle.substring(0, 7);
+    titlePrefix = cleanTitle.substring(0, 7).toLowerCase();
   }
   
+  // Remove underscore before year in old key (e.g., Po_tulka_2025 -> Po_tulka2025)
+  const cleanedOldKey = oldKey.replace(/_(\d{4})$/, '$1');
+  
   // Create new citation key
-  const newKey = titlePrefix ? `${oldKey}_${titlePrefix}` : oldKey;
+  const newKey = titlePrefix ? `${cleanedOldKey}${titlePrefix}` : oldKey;
   
   // Split the content to get individual fields
   const content = cleaned.substring(

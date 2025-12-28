@@ -15,8 +15,7 @@ function extractDOI(input) {
   
   const doiStr = String(input).trim();
   return doiStr
-    .replace('https://doi.org/', '')
-    .replace('http://doi.org/', '')
+    .replace(/https?:\/\/doi\.org\//gi, '')
     .trim();
 }
 
@@ -29,7 +28,8 @@ async function doi2bibNode(doi) {
   const cleanDOI = extractDOI(doi);
   const url = `https://doi.org/${cleanDOI}`;
   
-  const fetch = (await import('node-fetch')).default;
+  // Use require instead of dynamic import for Jest compatibility
+  const fetch = require('node-fetch');
   
   const response = await fetch(url, {
     headers: {
@@ -69,12 +69,26 @@ function doi2bibAppleScript(doi) {
  * @returns {string} BibTeX citation or error message
  */
 function run(input) {
+  var doi = '';
+  
   try {
-    const doiInput = String(input);
-    const cleanDOI = extractDOI(doiInput);
-    return doi2bibAppleScript(cleanDOI);
+    // Handle different input types from Shortcuts
+    var doiInput;
+    
+    if (typeof input === 'string') {
+      doiInput = input;
+    } else if (Array.isArray(input) && input.length > 0) {
+      doiInput = String(input[0]);
+    } else if (input) {
+      doiInput = String(input);
+    } else {
+      return 'Error: No input provided';
+    }
+    
+    doi = extractDOI(doiInput);
+    return doi2bibAppleScript(doi);
   } catch (error) {
-    return 'Error: ' + error.message;
+    return 'Error: ' + error.message + '\nDOI attempted: ' + doi;
   }
 }
 
